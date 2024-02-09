@@ -42,7 +42,7 @@ body {
 
 .hide {
     opacity: 0;
-    transform: translateY(-100%);
+    transform: scale(.1);
 }
 
 .hero-wrapper {
@@ -65,7 +65,6 @@ body {
 .hero__image img {
     width: 60vw;
     border-radius: 50% 44% 50% 50%;
-    transition: 1s;
 }
 
 .corners__top {
@@ -97,22 +96,33 @@ body {
 
 .wrapper {
     z-index: -1;
+    inset: 0;
+    position: absolute;
+}
+
+.mission__content {
+    background-color: var(--lavender);
     display: flex;
     justify-content: center;
     align-items: center;
     inset: 0;
     position: absolute;
-    padding: 1rem;
 }
-
-.mission__content {background-color: var(--lavender);}
-.whipped__content {background-color: var(--brown);}
-.balm__content {background-color: var(--gray);}
-
-.mission__content,
-.whipped__content,
+.whipped__content {
+    background-color: var(--brown);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inset: 0;
+    position: absolute;
+}
 .balm__content {
-    transition: 1s;
+    background-color: var(--gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inset: 0;
+    position: absolute;
 }
 
 @keyframes top {
@@ -162,6 +172,12 @@ body {
   .corners__right {
     transform: translateX(100%);
     animation: right 300ms linear 300ms forwards;
+  }
+  .mission__content,
+  .whipped__content,
+  .balm__content,
+  .hero__image img{
+      transition: .5s;
   }
 }
 
