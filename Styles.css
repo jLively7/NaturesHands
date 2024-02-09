@@ -20,33 +20,43 @@ video {
 
 :root {
     --lavender: hsl(211.3, 21.5%, 40%);
-    --tan: hsl(35, 89%, 95%);
+    --tan: hsl(50, 100%, 90%);
     --gray: hsl(0, 0%, 30%);
-    --brown: hsl(39.3, 78.9%, 22.4%);
+    --brown: hsl(41, 79%, 22%);
     --yellow: hsl(35, 89%, 70%);
     --ff: "Oswald", sans-serif;
 }
 
+body {
+    min-height: 100%;
+    background-color: var(--tan);
+    font-family: var(--ff);
+    font-weight: 300;
+}
+
 a {
     text-decoration: none;
-    color: var(--tan);
+    color: var(--yellow);
     font-family: var(--ff);
 }
 
-body {
-    min-height: 100dvh;
-    background-color: var(--yellow);
-    /* background-image: url(https://images.unsplash.com/photo-1438786657495-640937046d18?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-    backdrop-filter: blur(3px);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--yellow);
+}
+
+span.big {
+    color: var(--yellow);
+    font-size: 2rem;
+    font-weight: 500;
 }
 
 nav {
     z-index: 999;
-    position: fixed;
+    position: absolute;
     width: 100%;
+    top: 0;
 }
 
 nav ul {
@@ -56,116 +66,119 @@ nav ul {
     align-items: center;
     height: 60px;
     gap: 2rem;
+    font-size: 1.4rem;
 }
 
-button {
-    font-family: var(--ff);
-    background: none;
-    color: var(--tan);
-    border: none;
-    cursor: pointer;
+nav a {
+    opacity: .8;
 }
 
-.bold {
+a[aria-current="page"] {
+    opacity: 1;
     font-weight: 900;
 }
 
-.hide {
-    visibility: hidden;
-    opacity: 0;
-    transform: scale(2);
-}
-
 .hero__image {
-    z-index: 0;
-    position: absolute;
-    display: flex;
-    height: 100%;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    clip-path: url(/Assets/NaturesHandsLogoTransparent.webp);
-}
-
-.hero__image img {
-    width: 50dvh;
-}
-
-.wrapper {
-    inset: 0;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: top;
-    width: 100vw;
     overflow: hidden;
 }
 
-.mission__content {
-    background-color: var(--lavender);
-}
-
-.mission__content p {
-    z-index: 998;
+.hero__image img {
     position: relative;
-    padding: 80px 2rem 0;
-    color: var(--tan);
+    padding-top: 40px;
+    right: -30vw;
+    width: 80vw;
+    transform: rotate(-15deg);
 }
 
-.mission__images {
+.lavender__image {
+    overflow: hidden;
+}
+
+.lavender__image img {
     position: absolute;
-    left: 0;
-    bottom: 10%;
-    width: 30dvh;
+    top: 40vw;
+    width: 30vw;
+    mix-blend-mode: multiply;
 }
 
-.products__content {
-    background-color: var(--brown);
-}
-
-.products__content p {
-    z-index: 998;
+.mission {
     position: relative;
-    padding: 1rem 2rem 0;
-    color: var(--tan);
+    margin-top: 0rem;
+    padding-inline: 1rem;
+    color: var(--gray);
+    margin-bottom: 2rem;
 }
 
-.product__image1 {
+.mission p {
+    margin-top: -.8rem;
+    background-color: var(--yellow);
+    padding: 1rem;
+    border-radius: 0 1rem;
+}
+
+.products {
     position: relative;
-    top: 0;
-    left: calc(50% - 15dvh);
-    width: 30dvh;
+    margin-top: 60px;
+    min-height: 60vh;
 }
 
-.product__image2 {
-    position: absolute;
+.products h1 {
+    line-height: 2.2rem;
+}
+
+.products img {
+    width: 20vh;
+    float: left;
+}
+
+footer {
+    position: relative;
     bottom: 0;
-    left: calc(50% - 15dvh);
-    width: 30dvh;
+    width: 100%;
+    background-color: var(--brown);
+    padding: 2rem;
+    color: var(--tan);
+    text-align: center;
+    margin-bottom: 0;
 }
 
-@keyframes fade {
-    from {opacity: 0;}
-    to {opacity:1;}
+footer ul {
+    list-style: none;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+footer em {
+    font-weight: bold;
+    color: var(--yellow);
+}
+
+input {
+    display: block;
+    background-color: var(--tan);
+    border: 2px solid var(--yellow);
+    color: var(--brown);
+    margin-top: 1rem;
+    padding: .2rem;
+    width: 100%;
+    border-radius: .5rem;
+}
+
+button {
+    display: block;
+    background-color: var(--brown);
+    color: var(--tan);
+    border: 2px solid var(--yellow);
+    margin: 8px auto;
+    padding-inline: 1rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   :has(:target) {
     scroll-behavior: smooth;
-  }
-  .hero__image {
-    opacity: 0;
-    animation: fade 300ms linear forwards;
-  }
-  nav {
-    opacity: 0;
-    animation: fade 300ms linear forwards;
-  }
-  .mission__content,
-  .products__content,
-  .hero__image {
-      transition: .5s;
   }
 }
 
@@ -175,50 +188,33 @@ button {
 
 @media (orientation: landscape) {
     .hero__image img {
-        width: 60dvh;
+        width: 60vh;
     }
-    .corners__top {
-        width: 50dvh;
-        right: 3dvh;
-    }
-    .corners__right {
-        width: 50dvh;
-        bottom: 3dvh;
-    }
-    .corners__bottom {
-        width: 45dvh;
-    }
-    .corners__left {
-        width: 30dvh;
-        top: 2dvh;
-    }
-
 }
 
 @media only screen and (min-width: 600px) {
     .hero__image img {
-        width: 50dvh;
+        width: 50vh;
+        position: relative;
+        padding-top: 40px;
+        right: -65vw;
+        transform: rotate(-15deg);
+    }
+    .mission {
+        left: calc(50% - 300px);
+    }
+    .mission p {
+        max-width: 600px;
+    }
+    input {
+        max-width: 300px;
+        margin: 1rem auto 0;
     }
 }
 
 
 
 @media only screen and (min-width: 900px) {
-    .corners__top {
-        width: 20vw;
-        right: 3vw;
-    }
-    .corners__right {
-        width: 25vw;
-        bottom: 3vw;
-    }
-    .corners__bottom {
-        width: 22vw;
-    }
-    .corners__left {
-        width: 20vw;
-        top: 3vw;
-    }
 }
 
 @media (prefers-color-scheme: dark) {
