@@ -20,14 +20,17 @@ video {
 
 :root {
     --lavender: hsl(211.3, 21.5%, 40%);
-    --tan: hsl(35, 89%, 90%);
+    --tan: hsl(35, 89%, 95%);
     --gray: hsl(0, 0%, 30%);
     --brown: hsl(39.3, 78.9%, 22.4%);
     --yellow: hsl(35, 89%, 70%);
+    --ff: "Oswald", sans-serif;
 }
 
 a {
     text-decoration: none;
+    color: var(--tan);
+    font-family: var(--ff);
 }
 
 body {
@@ -40,19 +43,38 @@ body {
     background-repeat: no-repeat; */
 }
 
+nav ul {
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    gap: 2rem;
+}
+
+button {
+    font-family: var(--ff);
+    background: none;
+    color: var(--tan);
+    border: none;
+    cursor: pointer;
+}
+
+.bold {
+    font-weight: 900;
+}
+
 .hide {
     opacity: 0;
     transform: scale(.1);
 }
 
-.hero-wrapper {
-    min-height: 100dvh;
-}
-
 .hero__image {
     z-index: 0;
     position: absolute;
-    /* SWITCH BACK TO FLEX AFTER ADDING CONTENT FOR LEFT */
     display: flex;
     height: 100%;
     width: 100%;
@@ -64,84 +86,61 @@ body {
 
 .hero__image img {
     width: 60vw;
-    border-radius: 50% 44% 50% 50%;
-}
-
-.corners__top {
-    position: absolute;
-    width: 50vw;
-    top: 0;
-    right: 2vw;
-}
-
-.corners__right {
-    position: absolute;
-    width: 40vw;
-    right: 0;
-    bottom: 20vw;
-}
-
-.corners__bottom {
-    position: absolute;
-    width: 52vw;
-    bottom: 0;
-    left: 3vw
-}
-
-.corners__left {
-    position: absolute;
-    width: 35vw;
-    top: 5vw;
 }
 
 .wrapper {
     z-index: -1;
     inset: 0;
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: top;
 }
 
 .mission__content {
     background-color: var(--lavender);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    inset: 0;
-    position: absolute;
-}
-.whipped__content {
-    background-color: var(--brown);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    inset: 0;
-    position: absolute;
-}
-.balm__content {
-    background-color: var(--gray);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    inset: 0;
-    position: absolute;
 }
 
-@keyframes top {
-    from {transform: translateY(-100%);}
-    to {transform: translateY(0);}
+.mission__content p {
+    position: relative;
+    z-index: 4;
+    padding: 80px 2rem 0;
+    color: var(--tan);
 }
-@keyframes bottom {
-    from {transform: translateY(100%);}
-    to {transform: translateY(0);}
+
+.mission__images {
+    position: absolute;
+    left: 0;
+    bottom: 10%;
+    width: 50vw;
 }
-@keyframes left {
-    from {transform: translateX(-100%);}
-    to {transform: translateX(0);}
+
+.products__content {
+    background-color: var(--brown);
 }
-@keyframes right {
-    from {transform: translateX(100%);}
-    to {transform: translateX(0);}
+
+.products__content p {
+    position: relative;
+    z-index: 4;
+    padding: 1rem 2rem 0;
+    color: var(--tan);
 }
-@keyframes hero {
+
+.product__image1 {
+    position: relative;
+    top: 0;
+    left: calc(50% - 15dvh);
+    width: 30dvh;
+}
+
+.product__image2 {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 15dvh);
+    width: 30dvh;
+}
+
+@keyframes fade {
     from {opacity: 0;}
     to {opacity:1;}
 }
@@ -150,33 +149,17 @@ body {
   :has(:target) {
     scroll-behavior: smooth;
   }
-  .navbar__links a {
-    transition: 500ms;
-  }
   .hero__image {
     opacity: 0;
-    animation: hero 300ms linear 600ms forwards;
+    animation: fade 300ms linear forwards;
   }
-  .corners__top {
-    transform: translateY(-100%);
-    animation: top 300ms linear 0s forwards;
-  }
-  .corners__bottom {
-    transform: translateY(100%);
-    animation: bottom 300ms linear 0s forwards;
-  }
-  .corners__left {
-    transform: translateX(-100%);
-    animation: left 300ms linear 300ms forwards;
-  }
-  .corners__right {
-    transform: translateX(100%);
-    animation: right 300ms linear 300ms forwards;
+  nav {
+    opacity: 0;
+    animation: fade 300ms linear forwards;
   }
   .mission__content,
-  .whipped__content,
-  .balm__content,
-  .hero__image img{
+  .products__content,
+  .hero__image {
       transition: .5s;
   }
 }

@@ -1,46 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="Styles.css">
-  <script defer src="app.js"></script>
-  <title>Nature's Hands</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <script defer src="app.js"></script>
+    <title>Nature's Hands</title>
 </head>
 <body>
-    <main>
-        <div class="hero-wrapper">
+    <header>
+        <nav>
+            <ul>
+                <li><button class="mission_link">MISSION</a></li>
+                <li><button class="products_link">PRODUCTS</a></li>
+                <li><a href="">STORE</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero"></section>
+        <div class="wrapper">
             <div class="hero__image">
-                <img src="Assets/NaturesHandsLogoTransparent.webp" id="hero" class="interactive">
-            </div>
-            <div class="corners-wrapper">
-                <div class="corners__top">
-                    <img src="Assets/mag_whipped_tallow.webp" id="top">
-                </div>
-                <div class="corners__right">
-                    <img src="Assets/mag_whipped_tallow_2.webp" id="right">
-                </div>
-                <div class="corners__bottom">
-                    <img src="Assets/tallow_balm_lav.webp" id="bottom">
-                </div>
-                <div class="corners__left">
-                    <img src="Assets/lavender.webp" id="left">
-                </div>
+                <img src="Assets/NaturesHandsLogoTransparent.webp">
             </div>
         </div>
+    </section>
         <div class="wrapper">
-            <div class="mission__content hide" id="mission">
+            <div class="mission__content hide">
+                <div class="mission__images">
+                    <img src="Assets/lavender.webp">
+                </div>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga distinctio architecto corporis praesentium? Culpa deleniti repellendus fuga non, autem, commodi, labore deserunt optio voluptatem pariatur voluptatibus mollitia inventore saepe eum?</p>
             </div>
         </div>
         <div class="wrapper">
-            <div class="whipped__content hide" id="whipped">
+            <div class="products__content hide">
+                <div class="product__image1">
+                    <img src="Assets/mag_whipped_tallow.webp">
+                </div>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga distinctio architecto corporis praesentium? Culpa deleniti repellendus fuga non, autem, commodi, labore deserunt optio voluptatem pariatur voluptatibus mollitia inventore saepe eum?</p>
-            </div>
-        </div>
-        <div class="wrapper">
-            <div class="balm__content hide" id="balm">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga distinctio architecto corporis praesentium? Culpa deleniti repellendus fuga non, autem, commodi, labore deserunt optio voluptatem pariatur voluptatibus mollitia inventore saepe eum?</p>
+                <div class="product__image2">
+                    <img src="Assets/tallow_balm_lav.webp">
+                </div>
             </div>
         </div>
     </main>
