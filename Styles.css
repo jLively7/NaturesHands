@@ -43,10 +43,13 @@ body {
     background-repeat: no-repeat; */
 }
 
-nav ul {
+nav {
     z-index: 999;
     position: fixed;
     width: 100%;
+}
+
+nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
@@ -90,7 +93,6 @@ button {
 }
 
 .wrapper {
-    z-index: -1;
     inset: 0;
     position: absolute;
     display: flex;
@@ -105,8 +107,8 @@ button {
 }
 
 .mission__content p {
+    z-index: 998;
     position: relative;
-    z-index: 4;
     padding: 80px 2rem 0;
     color: var(--tan);
 }
@@ -123,8 +125,8 @@ button {
 }
 
 .products__content p {
+    z-index: 998;
     position: relative;
-    z-index: 4;
     padding: 1rem 2rem 0;
     color: var(--tan);
 }
