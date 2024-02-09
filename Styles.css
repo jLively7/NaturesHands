@@ -1,0 +1,244 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+:root {
+    --c-lavender: hsl(211.3, 21.5%, 40%);
+    --body-bgc: hsl(35, 89%, 90%);
+    --nav-link-c: hsl(0, 0%, 30%);
+    --h1-c: hsl(0, 0%, 30%);
+    --p-c: hsl(39.3, 78.9%, 22.4%);
+    --wrapper-bgc: hsl(35, 89%, 70%);
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    min-height: 100dvh;
+    background-color: var(--wrapper-bgc);
+    /* background-image: url(https://images.unsplash.com/photo-1438786657495-640937046d18?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    backdrop-filter: blur(3px);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; */
+}
+
+.hide {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+.navbar {
+    display: none;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 51.2px;
+    background-color: var(--body-bgc);
+}
+.navbar__links {
+    display: flex;
+    flex-wrap: wrap;
+}
+.navbar__title {
+    margin-left: auto;
+}
+.navbar__links a {
+    color: var(--nav-link-c);
+    display: inline-block;
+    padding: 1rem;
+}
+
+.hero-wrapper {
+    min-height: 100dvh;
+}
+
+.hero__image {
+    z-index: 0;
+    position: absolute;
+    /* SWITCH BACK TO FLEX AFTER ADDING CONTENT FOR LEFT */
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    clip-path: url(/Assets/NaturesHandsLogoTransparent.webp);
+}
+
+.hero__image img {
+    width: 60vw;
+    border-radius: 50% 44% 50% 50%;
+    transition: 1s;
+}
+
+.corners__top {
+    position: absolute;
+    width: 50vw;
+    top: 0;
+    right: 2vw;
+}
+
+.corners__right {
+    position: absolute;
+    width: 40vw;
+    right: 0;
+    bottom: 20vw;
+}
+
+.corners__bottom {
+    position: absolute;
+    width: 52vw;
+    bottom: 0;
+    left: 3vw
+}
+
+.corners__left {
+    position: absolute;
+    width: 35vw;
+    top: 5vw;
+}
+
+.wrapper {
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inset: 0;
+    position: absolute;
+    padding: 1rem;
+}
+
+.mission__content,
+.whipped__content,
+.balm__content {
+    transition: 1s;
+}
+
+@keyframes top {
+    from {transform: translateY(-100%);}
+    to {transform: translateY(0);}
+}
+@keyframes bottom {
+    from {transform: translateY(100%);}
+    to {transform: translateY(0);}
+}
+@keyframes left {
+    from {transform: translateX(-100%);}
+    to {transform: translateX(0);}
+}
+@keyframes right {
+    from {transform: translateX(100%);}
+    to {transform: translateX(0);}
+}
+@keyframes hero {
+    from {opacity: 0;}
+    to {opacity:1;}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :has(:target) {
+    scroll-behavior: smooth;
+  }
+  .navbar__links a {
+    transition: 500ms;
+  }
+  .hero__image {
+    opacity: 0;
+    animation: hero 300ms linear 600ms forwards;
+  }
+  .corners__top {
+    transform: translateY(-100%);
+    animation: top 300ms linear 0s forwards;
+  }
+  .corners__bottom {
+    transform: translateY(100%);
+    animation: bottom 300ms linear 0s forwards;
+  }
+  .corners__left {
+    transform: translateX(-100%);
+    animation: left 300ms linear 300ms forwards;
+  }
+  .corners__right {
+    transform: translateX(100%);
+    animation: right 300ms linear 300ms forwards;
+  }
+}
+
+@media (hover: hover) {
+    .navbar__links a:hover {
+        background-color: var(--nav-link-c);
+        color: var(--body-bgc);
+    }
+}
+
+@media (orientation: landscape) {
+    .hero__image img {
+        width: 60dvh;
+    }
+    .corners__top {
+        width: 50dvh;
+        right: 3dvh;
+    }
+    .corners__right {
+        width: 50dvh;
+        bottom: 3dvh;
+    }
+    .corners__bottom {
+        width: 45dvh;
+    }
+    .corners__left {
+        width: 30dvh;
+        top: 2dvh;
+    }
+
+}
+
+@media only screen and (min-width: 600px) {
+    .hero__image img {
+        width: 50vw;
+    }
+}
+
+
+
+@media only screen and (min-width: 900px) {
+    .corners__top {
+        width: 20vw;
+        right: 3vw;
+    }
+    .corners__right {
+        width: 25vw;
+        bottom: 3vw;
+    }
+    .corners__bottom {
+        width: 22vw;
+    }
+    .corners__left {
+        width: 20vw;
+        top: 3vw;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+  
+}
