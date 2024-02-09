@@ -86,7 +86,7 @@ button {
 }
 
 .hero__image img {
-    width: 60vw;
+    width: 50dvh;
 }
 
 .wrapper {
@@ -195,7 +195,7 @@ button {
 
 @media only screen and (min-width: 600px) {
     .hero__image img {
-        width: 50vw;
+        width: 50dvh;
     }
 }
 
