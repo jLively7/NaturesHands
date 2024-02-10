@@ -123,13 +123,10 @@ a[aria-current="page"] {
     padding: 1rem;
 }
 
-.products h1 {
-    line-height: 2.2rem;
-}
-
 .products img {
     width: 20vh;
     float: left;
+    margin-right: 2rem;
 }
 
 footer {
