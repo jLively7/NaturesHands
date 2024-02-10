@@ -32,6 +32,7 @@ body {
     background-color: var(--tan);
     font-family: var(--ff);
     font-weight: 300;
+    color: var(--gray);
 }
 
 a {
@@ -105,7 +106,6 @@ a[aria-current="page"] {
     position: relative;
     margin-top: 0rem;
     padding-inline: 1rem;
-    color: var(--gray);
     margin-bottom: 2rem;
 }
 
