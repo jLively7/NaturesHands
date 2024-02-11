@@ -41,11 +41,11 @@ a {
     font-family: var(--ff);
 }
 
-h1 {
+.mission h1 {
     font-size: 3rem;
     font-weight: 700;
     color: var(--brown);
-    line-height: 4rem;
+    line-height: 3.7rem;
 }
 
 span.big {
@@ -335,7 +335,7 @@ button {
 
 @media only screen and (min-width: 600px) {
     .hero-wrapper{
-        padding-inline: 5vw;
+        width: 100vw;
     }
     .hero {
         width: 30%;
@@ -347,7 +347,8 @@ button {
         width: 400px;
     }
     .mission {
-        width: 50%;
+        width: 60vw;
+        max-width :600px;
     }
     .mission h1 {
         font-size: 4rem;
