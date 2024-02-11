@@ -125,9 +125,8 @@ a[aria-current="page"] {
     flex-wrap: wrap;
     justify-content: center;
     background-image: url(Assets/lomig-HHpRh6rNQMo-unsplash.webp);
-    background-attachment: fixed;
     background-size: cover;
-    background-position: bottom;
+    background-position: center;
     padding-bottom: 2rem;
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
 }
