@@ -21,9 +21,9 @@ video {
 :root {
     --lavender: hsl(211.3, 21.5%, 40%);
     --tan: hsl(50, 100%, 90%);
-    --gray: hsl(0, 0%, 30%);
+    --gray: hsl(0, 0%, 20%);
     --brown: hsl(41, 79%, 22%);
-    --yellow: hsl(35, 89%, 70%);
+    --yellow: hsl(35, 89%, 60%);
     --ff: "Oswald", sans-serif;
 }
 
@@ -42,9 +42,10 @@ a {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 700;
-    color: var(--yellow);
+    color: var(--brown);
+    line-height: 4rem;
 }
 
 span.big {
@@ -88,10 +89,15 @@ a[aria-current="page"] {
     gap: 1rem;
     margin-top: 60px;  
     padding: 1rem;
+    background-image: linear-gradient(
+        190deg,
+        var(--tan),
+        var(--yellow)
+    );
 }
 
 .hero {
-    width: 80%;
+    width: 100%;
 }
 
 .lavender__image {
@@ -108,30 +114,62 @@ a[aria-current="page"] {
 .mission {
     text-align: center;
     padding: 1rem;
-    font-weight: 400;
+    font-weight: 350;
+    font-size: 1.2rem;
 }
 
 .questions-wrapper {
+    z-index: 1;
     position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 2rem;
+    background-image: url(Assets/lomig-HHpRh6rNQMo-unsplash.webp);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: bottom;
+    padding-bottom: 2rem;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
 }
 
-.questions-title {
-    font-size: 2.5rem;
+.questions-wrapper::after {
+    z-index: 2;
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    inset: 0;
+    backdrop-filter: blur(3px);
+    background-image: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.5),
+        transparent 25%,
+        transparent 75%,
+        rgba(0, 0, 0, 0.5)
+    );
+}
+
+.questions__title {
+    z-index: 3;
+    font-size: 3rem;
     text-align: center;
     font-weight: 700;
     line-height: 3rem;
-    margin-top: 1rem;
-    color: var(--yellow);
+    padding-top: 2rem;
+    color: var(--tan);
     width: 50vw;
+    text-shadow: 
+        0 1px 30px rgba(0, 0, 0, 0.5),
+        0 1px 15px rgba(0, 0, 0, 0.5);
+    ;
 }
 
-.slider-wrapper {
-    position: relative;
+.fa-circle-question {
+    font-size: 4rem;
+    float: left;
+    margin-right: 1rem;
+    text-shadow: .5rem .5rem .5rem rgba(0, 0, 0, 0.2);
 }
+
 .snaps-inline {
     scroll-snap-type: inline mandatory;
     scroll-padding-inline: 1rem;
@@ -143,7 +181,7 @@ a[aria-current="page"] {
 
 .question-card-slider {
     position: relative;
-    width: 90vw;
+    width: 100vw;
     padding: 10px;
     display: grid;
     grid-auto-flow: column;
@@ -154,32 +192,18 @@ a[aria-current="page"] {
     scrollbar-width: thin;
 }
 
-.slider-overlay {
-    z-index: 5;
-    pointer-events: none;
-    position: absolute;
-    inset: 0;
-    left: -1px;
-    width: calc(90vw + 2px);
-    background-image: linear-gradient(
-        90deg,
-        var(--tan),
-        transparent 5%,
-        transparent 95%,
-        var(--tan)
-    );
-}
-
 .question-card {
+    z-index: 3;
     display: inline-block;
     position: relative;
     width: 240px;
-    background-color: var(--yellow);
+    background-color: hsla(35, 90%, 60%, 0.9);
     height: 300px;
     margin: 0 auto;
     border-radius: 1rem;
     padding: 10px;
     box-shadow: 0 0 7px 0 #4d4d4d59;
+    backdrop-filter: blur(8px);
 }
 
 .question-card__title {
@@ -190,12 +214,54 @@ a[aria-current="page"] {
     line-height: 2rem;
     font-weight: 500;
     text-transform: uppercase;
+    text-shadow: 0 .2rem .2rem rgba(0, 0, 0, 0.2);
 }
 
 .question-card p {
-    z-index: 3;
     position: relative;
     font-weight: 400;
+}
+
+.contact-wrapper {
+    position: relative;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 300px;
+    gap: 1rem;
+    padding: 2rem;
+    background-image: linear-gradient(
+        190deg,
+        var(--yellow),
+        var(--tan)
+    );
+}
+
+.contact__title {
+    color: var(--brown);
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 700;
+    line-height: 3rem;
+    width: 300px;
+    background-color: var(--yellow);
+    border-radius: 50%;
+}
+
+.contact__content {
+    width: 80vw;
+    max-width: 500px;
+    font-weight: 400;
+}
+
+.contact__content a {
+    display: inline-block;
+    background-color: var(--brown);
+    color: var(--yellow);
+    padding: 1px 7px;
+    border-radius: 8px;
 }
 
 .products {
@@ -270,10 +336,10 @@ button {
 
 @media only screen and (min-width: 600px) {
     .hero-wrapper{
-        width: 90vw;
+        padding-inline: 5vw;
     }
     .hero {
-        width: 40%;
+        width: 30%;
     }
     .hero__image {
         width: 40vw;
