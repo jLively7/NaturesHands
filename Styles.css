@@ -90,7 +90,7 @@ a[aria-current="page"] {
     gap: 1rem;
     margin-top: 60px;  
     padding: 1rem;
-    border-color: var(--tan);
+    background-color: var(--yellow);
     overflow: hidden;
 }
 
@@ -100,38 +100,42 @@ a[aria-current="page"] {
 
 .mission {
     text-align: center;
-    padding: 1rem;
+    padding: .5rem .5rem 0;
     font-family: var(--ff-desc);
     font-weight: 350;
-    font-size: 1rem;
+    font-size: .8rem;
 }
 
 .mission__img {
-    height: 200px;
+    height: 300px;
     width: 100%;
-    background-image:
-        linear-gradient(
-            transparent 80%,
-            var(--tan)
-        ),
-        url(Assets/owners.webp);
-    background-position: center;
+    background-image: url(Assets/owners.webp);
+    background-position: 0 60%;
     background-size: cover;
-    margin-bottom: -2rem;
+    margin-bottom: -80px;
     box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 32px 32px 0 0;
+    border-radius: 3rem 1rem 0 0;
 }
 
 .mission__title {
+    position: relative;
     font-family: var(--ff);
     font-size: 3rem;
     font-weight: 700;
     color: var(--yellow);
+    width: max-content;
     line-height: 3rem;
-    text-shadow: 0 0 20px var(--tan),
-        0 0 10px var(--tan),
-        0 0 7px var(--tan),
-        0 0 5px var(--tan);
+    background-color: var(--tan);
+    border-radius: 8px 8px 0 0;
+    padding-inline: 6px;
+}
+
+.mission__content {
+    position: relative;
+    background-color: var(--tan);
+    padding: 1rem;
+    border-radius: 0 0 3rem 1rem;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 .questions-wrapper {
@@ -171,7 +175,6 @@ a[aria-current="page"] {
     line-height: 3rem;
     padding-top: 2rem;
     color: var(--tan);
-    width: 50vw;
     text-shadow: 
         0 1px 30px rgba(0, 0, 0, 0.5),
         0 1px 15px rgba(0, 0, 0, 0.5);
@@ -205,7 +208,7 @@ a[aria-current="page"] {
     display: inline-block;
     position: relative;
     width: 240px;
-    background-color: hsla(35, 90%, 60%, 0.9);
+    background-color: var(--yellow);
     height: 300px;
     margin: 0 auto;
     border-radius: 1rem;
@@ -298,10 +301,10 @@ a[aria-current="page"] {
 
 .products-card {
     padding: 1rem;
-    background-color: var(--tan);
+    background-color: var(--yellow);
     background-image: radial-gradient(
         transparent 50%,
-        var(--yellow) 200%
+        rgba(0, 0, 0, 0.2) 200%
     );
     width: 100%;
     margin: 50px auto 0;
@@ -315,7 +318,7 @@ a[aria-current="page"] {
 .products-card__title {
     z-index: 2;
     position: relative;
-    color: var(--yellow);
+    color: var(--tan);
     font-size: 3rem;
     line-height: 2.7rem;
     font-weight: 700;
